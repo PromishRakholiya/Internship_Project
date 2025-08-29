@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cars - CarSprint India</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+  </head>
+  <body class="light-theme">
+    <div id="app">
+
+      <!-- Header -->
+      <header id="header">
+        <div class="container">
+          <div class="header-content">
+            <div class="logo">
+              <a href="/">
+                <span class="logo-text">Car<span class="highlight">Sprint</span></span>
+              </a>
+            </div>
+
+            <nav class="main-nav">
+              <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./cars.html" >Cars</a></li>
+                <li><a href="./location.html">Locations</a></li>
+                 <li><a href="./about.html" class="active">About</a></li>
+
+              </ul>
+            </nav>
+
+            <div class="header-actions">
+              <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-sun"></i>
+              </button>
+
+              <div class="auth-buttons">
+                <button id="login-btn" class="btn btn-outline">Login</button>
+                <button id="signup-btn" class="btn btn-primary">Sign Up</button>
+              </div>
+              <div class="wishlist-icon">
+                <a href="/wishlist.html" class="wishlist-btn" aria-label="View wishlist">
+                  <i class="fas fa-heart"></i>
+                  <span class="wishlist-count" id="wishlist-count">0</span>
+                </a>
+              </div>
+              <div class="user-profile hidden">
+                <span class="user-name">User</span>
+                <div class="profile-dropdown">
+                  <a href="/profile.html">My Profile</a>
+                  <a href="/bookings.html">My Bookings</a>
+                  <a href="#" id="logout-btn">Logout</a>
+                </div>
+              </div>
+
+              <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- About Section -->
+      <section class="about">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="abc">About Us</h2>
+            <p>Get to know CarSprint India</p>
+          </div>
+          <div class="about-content">
+            <p>
+              At <strong>CarSprint India</strong>, we’re committed to redefining car rentals across the country. 
+              With a wide range of vehicles and user-friendly online booking, we offer an experience that’s fast, reliable, and convenient.
+            </p>
+            <p>
+              Whether you're planning a weekend getaway, business trip, or city travel, our goal is to provide the perfect ride every time.
+              Our fleet covers everything from economy hatchbacks to luxury sedans and electric cars.
+            </p>
+            <p>
+              With presence in multiple cities and 24/7 customer support, we ensure you have a smooth journey from start to finish.
+            </p>
+          </div>
+        </div>
+
+<div class="developer-card" style="margin-top: 50px; display: flex; align-items: center; gap: 20px; background-color: #fff; padding: 50px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 700px; margin-left: auto; margin-right: auto;">
+  <img src="/1.jpeg" alt="Developer Photo" style="border-radius: 100%; width: 550px; height: 150px; object-fit: cover; border: 4px solid #ff6b00;">
+
+  <div style="text-align: left;">
+    <h3 style="margin: 0; color: #222; font-size: 24px;">Promish Rakholiya</h3>
+    <p style="margin: 5px 0 10px; font-weight: 600; color: #ff4318;">Full Stack Web Developer</p>
+    <p style="margin: 0; color: #223;">Hi! I'm Promish, the developer behind CarSprint India. I specialize in building modern web applications using HTML, CSS, JavaScript, and Django. I'm passionate about creating fast, user-friendly platforms that solve real-world problems.</p>
+  </div>
+
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-col">
+             <div class="logo">
+              <a href="/">
+                <span class="logo-text">Car<span class="highlight">Sprint</span></span>
+              </a>
+            </div>
+              <p>Your trusted car rental service in India</p>
+            </div>
+            <div class="footer-col">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cars.html">Cars</a></li>
+                <li><a href="/locations.html">Locations</a></li>
+                <li><a href="/about.html">About Us</a></li>
+
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h3>Car Categories</h3>
+              <ul>
+                <li><a href="/cars.html?category=economy">Economy</a></li>
+                <li><a href="/cars.html?category=sedan">Sedan</a></li>
+                <li><a href="/cars.html?category=suv">SUV</a></li>
+                <li><a href="/cars.html?category=luxury">Luxury</a></li>
+                <li><a href="/cars.html?category=electric">Electric</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h3>Contact Info</h3>
+              <ul class="contact-info">
+                <li><i class="fas fa-map-marker-alt"></i> 123 Junagadh</li>
+                <li><i class="fas fa-phone"></i> +91 72028 40833</li>
+                <li><i class="fas fa-envelope"></i> info@CarSprint.in</li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h3>Follow Us</h3>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2025 CarSprint India. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

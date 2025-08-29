@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Wishlist - CarSprint India</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+  </head>
+  <body class="light-theme">
+    <div id="app">
+      <!-- Header -->
+      <header id="header">
+        <div class="container">
+          <div class="header-content">
+            <div class="logo">
+              <a href="/">
+                <span class="logo-text">Car<span class="highlight">Sprint</span></span>
+              </a>
+            </div>
+            <nav class="main-nav">
+              <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="./cars.html">Cars</a></li>
+                <li><a href="./location.html">Locations</a></li>
+                <li><a href="./about.html">About</a></li>
+              </ul>
+            </nav>
+            <div class="header-actions">
+              <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-sun"></i>
+              </button>
+              <div class="wishlist-icon">
+                <a href="/wishlist.html" class="wishlist-btn active" aria-label="View wishlist">
+                  <i class="fas fa-heart"></i>
+                  <span class="wishlist-count" id="wishlist-count">0</span>
+                </a>
+              </div>
+              <div class="auth-buttons">
+                <button id="login-btn" class="btn btn-outline">Login</button>
+                <button id="signup-btn" class="btn btn-primary">Sign Up</button>
+              </div>
+              <div class="user-profile hidden">
+                <span class="user-name">User</span>
+                <div class="profile-dropdown">
+                  <a href="/profile.html">My Profile</a>
+                  <a href="/bookings.html">My Bookings</a>
+                  <a href="/wishlist.html" class="active">My Wishlist</a>
+                  <a href="#" id="logout-btn">Logout</a>
+                </div>
+              </div>
+              <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Page Header -->
+      <section class="page-header">
+        <div class="container">
+          <h1>My Wishlist</h1>
+          <p>Your favorite cars saved for later</p>
+        </div>
+      </section>
+
+      <!-- Wishlist Section -->
+      <section class="wishlist-section">
+        <div class="container">
+          <div class="wishlist-container">
+            <!-- Wishlist Header -->
+            <div class="wishlist-header">
+              <div class="wishlist-stats">
+                <span id="wishlist-total">0 cars</span> in your wishlist
+              </div>
+              <div class="wishlist-actions">
+                <button id="clear-wishlist" class="btn btn-outline btn-sm">Clear All</button>
+                <a href="/cars.html" class="btn btn-primary btn-sm">Browse Cars</a>
+              </div>
+            </div>
+            
+            <!-- Wishlist Items -->
+            <div id="wishlist-items" class="wishlist-items">
+              <!-- Wishlist items will be loaded here via JavaScript -->
+              <div class="loading">Loading your wishlist...</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+     <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-col">
+            <div class="logo">
+              <a href="/">
+                <span class="logo-text">Car<span class="highlight">Sprint</span></span>
+              </a>
+            </div>
+              <p>Your trusted car rental service in India</p>
+            </div>
+            <div class="footer-col">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cars.html">Cars</a></li>
+                <li><a href="/locations.html">Locations</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h3>Car Categories</h3>
+              <ul>
+                <li><a href="/cars.html?category=economy">Economy</a></li>
+                <li><a href="/cars.html?category=sedan">Sedan</a></li>
+                <li><a href="/cars.html?category=suv">SUV</a></li>
+                <li><a href="/cars.html?category=luxury">Luxury</a></li>
+                <li><a href="/cars.html?category=electric">Electric</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h3>Contact Info</h3>
+              <ul class="contact-info">
+                <li><i class="fas fa-map-marker-alt"></i> 123 Junagadh</li>
+                <li><i class="fas fa-phone"></i> +91 72028 40833</li>
+                <li><i class="fas fa-envelope"></i> info@CarSprint.in</li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h3>Follow Us</h3>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2025 CarSprint India. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Login Modal -->
+      <div id="login-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Login to Your Account</h2>
+          <form id="login-form">
+            <div class="form-group">
+              <label for="login-email">Email</label>
+              <input type="email" id="login-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="login-password">Password</label>
+              <input type="password" id="login-password" name="password" required>
+            </div>
+            <div class="form-group form-action">
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+            <p class="form-link">Don't have an account? <a href="#" id="switch-to-signup">Sign Up</a></p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Signup Modal -->
+      <div id="signup-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Create an Account</h2>
+          <form id="signup-form">
+            <div class="form-group">
+              <label for="signup-name">Full Name</label>
+              <input type="text" id="signup-name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-email">Email</label>
+              <input type="email" id="signup-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-phone">Phone Number</label>
+              <input type="tel" id="signup-phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit number" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-password">Password</label>
+              <input type="password" id="signup-password" name="password" minlength="8" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-confirm-password">Confirm Password</label>
+              <input type="password" id="signup-confirm-password" name="confirm-password" minlength="8" required>
+            </div>
+            <div class="form-group form-action">
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            </div>
+            <p class="form-link">Already have an account? <a href="#" id="switch-to-login">Login</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./js/wishlist.js"></script>
+  </body>
+</html>

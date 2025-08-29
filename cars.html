@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cars - CarSprint India</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+  </head>
+  <body class="light-theme">
+    <div id="app">
+      <!-- Header -->
+      <header id="header">
+        <div class="container">
+          <div class="header-content">
+            <div class="logo">
+              <a href="/">
+                <span class="logo-text">Car<span class="highlight">Sprint</span></span>
+              </a>
+            </div>
+            <nav class="main-nav">
+              <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="./cars.html" class="active">Cars</a></li>
+                <li><a href="./location.html">Locations</a></li>
+                <li><a href="./about.html">About</a></li>
+
+              </ul>
+            </nav>
+            <div class="header-actions">
+              <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-sun"></i>
+              </button>
+               <div class="wishlist-icon">
+                <a href="/wishlist.html" class="wishlist-btn" aria-label="View wishlist">
+                  <i class="fas fa-heart"></i>
+                  <span class="wishlist-count" id="wishlist-count">0</span>
+                </a>
+              </div>
+              <div class="auth-buttons">
+                <button id="login-btn" class="btn btn-outline">Login</button>
+                <button id="signup-btn" class="btn btn-primary">Sign Up</button>
+              </div>
+              <div class="user-profile hidden">
+                <span class="user-name">User</span>
+                <div class="profile-dropdown">
+                  <a href="/profile.html">My Profile</a>
+                  <a href="/bookings.html">My Bookings</a>
+                  <a href="/wishlist.html">My Wishlist</a>
+                  <a href="#" id="logout-btn">Logout</a>
+                </div>
+              </div>
+              <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Page Header -->
+      <section class="page-header">
+        <div class="container">
+          <h1>Our Cars</h1>
+          <p>Choose from our wide selection of quality vehicles</p>
+        </div>
+      </section>
+
+      <!-- Cars Section -->
+      <section class="cars-section">
+        <div class="container">
+          <div class="cars-container">
+            <!-- Filters Sidebar -->
+            <div class="filters-sidebar">
+              <div class="filters-header">
+                <h3>Filters</h3>
+                <button id="clear-filters" class="btn btn-sm">Clear All</button>
+              </div>
+              
+              <form id="filters-form">
+                <!-- Car Category -->
+                <div class="filter-group">
+                  <h4>Car Category</h4>
+                  <div class="filter-options">
+                    <label class="filter-option">
+                      <input type="radio" name="category" value="all" checked>
+                      <span>All Categories</span>
+                    </label>
+                    <label class="filter-option">
+                      <input type="radio" name="category" value="hatchback">
+                      <span>Hatchback</span>
+                    </label>
+                    <label class="filter-option">
+                      <input type="radio" name="category" value="sedan">
+                      <span>Sedan</span>
+                    </label>
+                    <label class="filter-option">
+                      <input type="radio" name="category" value="suv">
+                      <span>SUV</span>
+                    </label>
+                    <label class="filter-option">
+                      <input type="radio" name="category" value="muv">
+                      <span>MUV</span>
+                    </label>
+                    <label class="filter-option">
+                      <input type="radio" name="category" value="luxury">
+                      <span>Luxury</span>
+                    </label>
+                    <label class="filter-option">
+                      <input type="radio" name="category" value="electric">
+                      <span>Electric</span>
+                    </label>
+                  </div>
+                </div>
+                
+                <!-- Price Range -->
+                <div class="filter-group">
+                  <h4>Price Range (per day)</h4>
+                  <div class="filter-options">
+                    <div class="price-inputs">
+                      <input type="number" id="min-price" name="min-price" placeholder="Min" min="0">
+                      <span class="a1">TO</span>
+                      <input type="number" id="max-price" name="max-price" placeholder="Max" min="0">
+                    </div>
+                    <button type="button" id="apply-price" class="btn btn-sm btn-outline">Apply</button>
+                  </div>
+                </div>
+                
+                <!-- Location -->
+                <div class="filter-group">
+                  <h4>Location</h4>
+                  <select id="location-filter" name="location">
+                    <option value="">All Locations</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                  </select>
+                </div>
+                
+                <!-- Transmission -->
+                <div class="filter-group">
+                  <h4>Transmission</h4>
+                  <div class="filter-options">
+                    <label class="filter-option">
+                      <input type="radio" name="transmission" value="all" checked>
+                      <span>All</span>
+                    </label>
+                    <label class="filter-option">
+                      <input type="radio" name="transmission" value="Manual">
+                      <span>Manual</span>
+                    </label>
+                    <label class="filter-option">
+                      <input type="radio" name="transmission" value="Automatic">
+                      <span>Automatic</span>
+                    </label>
+                  </div>
+                </div>
+                
+                <!-- Fuel Type -->
+                <div class="filter-group">
+                  <h4>Fuel Type</h4>
+                  <div class="filter-options">
+                    <label class="filter-option">
+                      <input type="radio" name="fuel" value="all" checked>
+                      <span>All</span>
+                    </label>
+                    <label class="filter-option">
+                      <input type="radio" name="fuel" value="Petrol">
+                      <span>Petrol</span>
+                    </label>
+                    <label class="filter-option">
+                      <input type="radio" name="fuel" value="Diesel">
+                      <span>Diesel</span>
+                    </label>
+                    <label class="filter-option">
+                      <input type="radio" name="fuel" value="Electric">
+                      <span>Electric</span>
+                    </label>
+                  </div>
+                </div>
+                
+                <!-- Seating Capacity -->
+                <div class="filter-group">
+                  <h4>Seating Capacity</h4>
+                  <div class="filter-options">
+                    <label class="filter-option">
+                      <input type="radio" name="seats" value="all" checked>
+                      <span>All</span>
+                    </label>
+                    <label class="filter-option">
+                      <input type="radio" name="seats" value="2">
+                      <span>2+ Seats</span>
+                    </label>
+                    <label class="filter-option">
+                      <input type="radio" name="seats" value="4">
+                      <span>4+ Seats</span>
+                    </label>
+                    <label class="filter-option">
+                      <input type="radio" name="seats" value="5">
+                      <span>5+ Seats</span>
+                    </label>
+                    <label class="filter-option">
+                      <input type="radio" name="seats" value="7">
+                      <span>7+ Seats</span>
+                    </label>
+                  </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary apply-filters">Apply Filters</button>
+              </form>
+            </div>
+            
+            <!-- Cars Content -->
+            <div class="cars-content">
+              <!-- Active Filters -->
+              <div id="active-filters"></div>
+              
+              <!-- Sort Options -->
+              <div class="sort-options">
+                <label for="sort-by">Sort By:</label>
+                <select id="sort-by" name="sort-by">
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="popularity">Popularity</option>
+                  <option value="newest">Newest First</option>
+                </select>
+              </div>
+              
+              <!-- Cars Grid -->
+              <div id="cars-grid" class="car-grid">
+                <!-- Cars will be loaded here via JavaScript -->
+              </div>
+              
+              <!-- Pagination -->
+              <div id="pagination"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter Section -->
+      <!-- <section class="newsletter">
+        <div class="container">
+          <div class="newsletter-content">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get the latest updates and special offers</p>
+            <form id="newsletter-form" class="newsletter-form">
+              <input type="email" placeholder="Your Email Address" required>
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- Footer -->
+        <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-col">
+            <div class="logo">
+              <a href="/">
+                <span class="logo-text">Car<span class="highlight">Sprint</span></span>
+              </a>
+            </div>
+              <p>Your trusted car rental service in India</p>
+            </div>
+            <div class="footer-col">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cars.html">Cars</a></li>
+                <li><a href="/locations.html">Locations</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h3>Car Categories</h3>
+              <ul>
+                <li><a href="/cars.html?category=economy">Economy</a></li>
+                <li><a href="/cars.html?category=sedan">Sedan</a></li>
+                <li><a href="/cars.html?category=suv">SUV</a></li>
+                <li><a href="/cars.html?category=luxury">Luxury</a></li>
+                <li><a href="/cars.html?category=electric">Electric</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h3>Contact Info</h3>
+              <ul class="contact-info">
+                <li><i class="fas fa-map-marker-alt"></i> 123 Junagadh</li>
+                <li><i class="fas fa-phone"></i> +91 72028 40833</li>
+                <li><i class="fas fa-envelope"></i> info@CarSprint.in</li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h3>Follow Us</h3>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2025 CarSprint India. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Login Modal -->
+      <div id="login-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Login to Your Account</h2>
+          <form id="login-form">
+            <div class="form-group">
+              <label for="login-email">Email</label>
+              <input type="email" id="login-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="login-password">Password</label>
+              <input type="password" id="login-password" name="password" required>
+            </div>
+            <div class="form-group form-action">
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+            <p class="form-link">Don't have an account? <a href="#" id="switch-to-signup">Sign Up</a></p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Signup Modal -->
+      <div id="signup-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Create an Account</h2>
+          <form id="signup-form">
+            <div class="form-group">
+              <label for="signup-name">Full Name</label>
+              <input type="text" id="signup-name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-email">Email</label>
+              <input type="email" id="signup-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-phone">Phone Number</label>
+              <input type="tel" id="signup-phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit number" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-password">Password</label>
+              <input type="password" id="signup-password" name="password" minlength="8" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-confirm-password">Confirm Password</label>
+              <input type="password" id="signup-confirm-password" name="confirm-password" minlength="8" required>
+            </div>
+            <div class="form-group form-action">
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            </div>
+            <p class="form-link">Already have an account? <a href="#" id="switch-to-login">Login</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+    <script type="module">
+      import { loadAllCars } from '/js/cars.js';
+      
+      document.addEventListener('DOMContentLoaded', () => {
+        // Parse URL parameters for initial filters
+        const urlParams = new URLSearchParams(window.location.search);
+        const initialFilters = {};
+        
+        if (urlParams.has('category')) {
+          initialFilters.category = urlParams.get('category');
+          // Set radio button
+          const categoryRadio = document.querySelector(`input[name="category"][value="${initialFilters.category}"]`);
+          if (categoryRadio) categoryRadio.checked = true;
+        }
+        
+        if (urlParams.has('location')) {
+          initialFilters.location = urlParams.get('location');
+          // Set select dropdown
+          const locationSelect = document.getElementById('location-filter');
+          if (locationSelect) locationSelect.value = initialFilters.location;
+        }
+        
+        if (urlParams.has('min_price')) {
+          initialFilters.minPrice = urlParams.get('min_price');
+          document.getElementById('min-price').value = initialFilters.minPrice;
+        }
+        
+        if (urlParams.has('max_price')) {
+          initialFilters.maxPrice = urlParams.get('max_price');
+          document.getElementById('max-price').value = initialFilters.maxPrice;
+        }
+        
+        if (urlParams.has('transmission')) {
+          initialFilters.transmission = urlParams.get('transmission');
+          // Set radio button
+          const transmissionRadio = document.querySelector(`input[name="transmission"][value="${initialFilters.transmission}"]`);
+          if (transmissionRadio) transmissionRadio.checked = true;
+        }
+        
+        if (urlParams.has('fuel')) {
+          initialFilters.fuel = urlParams.get('fuel');
+          // Set radio button
+          const fuelRadio = document.querySelector(`input[name="fuel"][value="${initialFilters.fuel}"]`);
+          if (fuelRadio) fuelRadio.checked = true;
+        }
+        
+        if (urlParams.has('seats')) {
+          initialFilters.seats = urlParams.get('seats');
+          // Set radio button
+          const seatsRadio = document.querySelector(`input[name="seats"][value="${initialFilters.seats}"]`);
+          if (seatsRadio) seatsRadio.checked = true;
+        }
+        
+        if (urlParams.has('page')) {
+          initialFilters.page = urlParams.get('page');
+        }
+        
+        if (urlParams.has('sort')) {
+          const sortValue = urlParams.get('sort');
+          document.getElementById('sort-by').value = sortValue;
+        }
+        
+        // Load cars with initial filters
+        loadAllCars(initialFilters);
+        
+        // Setup filters form
+        const filtersForm = document.getElementById('filters-form');
+        filtersForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          
+          const filters = {};
+          
+          // Get category
+          const categoryValue = document.querySelector('input[name="category"]:checked').value;
+          if (categoryValue !== 'all') {
+            filters.category = categoryValue;
+          }
+          
+          // Get price range
+          const minPrice = document.getElementById('min-price').value;
+          const maxPrice = document.getElementById('max-price').value;
+          if (minPrice) filters.minPrice = minPrice;
+          if (maxPrice) filters.maxPrice = maxPrice;
+          
+          // Get location
+          const locationValue = document.getElementById('location-filter').value;
+          if (locationValue) {
+            filters.location = locationValue;
+          }
+          
+          // Get transmission
+          const transmissionValue = document.querySelector('input[name="transmission"]:checked').value;
+          if (transmissionValue !== 'all') {
+            filters.transmission = transmissionValue;
+          }
+          
+          // Get fuel type
+          const fuelValue = document.querySelector('input[name="fuel"]:checked').value;
+          if (fuelValue !== 'all') {
+            filters.fuel = fuelValue;
+          }
+          
+          // Get seats
+          const seatsValue = document.querySelector('input[name="seats"]:checked').value;
+          if (seatsValue !== 'all') {
+            filters.seats = seatsValue;
+          }
+          
+          // Update URL with filters
+          const url = new URL(window.location.href);
+          url.search = '';
+          
+          Object.entries(filters).forEach(([key, value]) => {
+            url.searchParams.set(key, value);
+          });
+          
+          // Add sort parameter if exists
+          const sortValue = document.getElementById('sort-by').value;
+          url.searchParams.set('sort', sortValue);
+          
+          // Navigate to updated URL
+          window.location.href = url.toString();
+        });
+        
+        // Setup sort dropdown
+        const sortBySelect = document.getElementById('sort-by');
+        sortBySelect.addEventListener('change', () => {
+          const url = new URL(window.location.href);
+          url.searchParams.set('sort', sortBySelect.value);
+          window.location.href = url.toString();
+        });
+        
+        // Setup clear filters button
+        const clearFiltersBtn = document.getElementById('clear-filters');
+        clearFiltersBtn.addEventListener('click', () => {
+          // Reset form
+          filtersForm.reset();
+          
+          // Redirect to base URL without parameters
+          window.location.href = window.location.pathname;
+        });
+        
+        // Setup price apply button
+        const applyPriceBtn = document.getElementById('apply-price');
+        applyPriceBtn.addEventListener('click', () => {
+          filtersForm.dispatchEvent(new Event('submit'));
+        });
+      });
+    </script>
+  </body>
+</html>

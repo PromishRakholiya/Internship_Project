@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CarSprint India - Premium Car Rental Service</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+      
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+  </head>
+  <body class="light-theme">
+    <div id="app">
+      <!-- Header -->
+      <header id="header">
+        <div class="container">
+          <div class="header-content">
+            <div class="logo">
+              <a href="/">
+                <span class="logo-text">Car<span class="highlight">Sprint</span></span>
+              </a>
+            </div>
+            <nav class="main-nav">
+              <ul class="nav-links">
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="./cars.html">Cars</a></li>
+                <li><a href="./location.html">Locations</a></li>
+                <li><a href="./about.html">About</a></li>
+              </ul>
+            </nav>
+            <div class="header-actions">
+              <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-sun"></i>
+              </button>
+              <div class="wishlist-icon">
+                <a href="/wishlist.html" class="wishlist-btn" aria-label="View wishlist">
+                  <i class="fas fa-heart"></i>
+                  <span class="wishlist-count" id="wishlist-count">0</span>
+                </a>
+              </div>
+              <div class="auth-buttons">
+                <button id="login-btn" class="btn btn-outline">Login</button>
+                <button id="signup-btn" class="btn btn-primary">Sign Up</button>
+              </div>
+              <div class="user-profile hidden">
+                <span class="user-name">User</span>
+                <div class="profile-dropdown">
+                  <a href="/profile.html">My Profile</a>
+                  <a href="/bookings.html">My Bookings</a>
+                  <a href="/wishlist.html">My Wishlist</a>
+                  <a href="#" id="logout-btn">Logout</a>
+                </div>
+              </div>
+              <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1>Rent the Perfect Car for Your Journey</h1>
+            <p id="f1">Experience hassle-free car rentals across major Indian cities</p>
+            
+            <div class="search-container">
+              <form id="search-form" class="search-form">
+                <div class="form-group">
+                  <label for="location">Location</label>
+                  <select id="location" name="location" required>
+                    <option value="">Select City</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="bangalore">Bangalore</option>
+                    <option value="hyderabad">Hyderabad</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="kolkata">Kolkata</option>
+                    <option value="pune">Pune</option>
+                    <option value="ahmedabad">Ahmedabad</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="pickup-date">Pickup Date</label>
+                  <input type="date" id="pickup-date" name="pickup-date" required>
+                </div>
+                <div class="form-group">
+                  <label for="return-date">Return Date</label>
+                  <input type="date" id="return-date" name="return-date" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Find Cars</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Cars Section -->
+      <section class="featured-cars">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="a">Featured Cars</h2>
+            <p>Explore our top picks for your next trip</p>
+          </div>
+          <div class="car-grid" id="featured-cars-grid">
+            <!-- Cars will be loaded here via JavaScript -->
+          </div>
+          <div class="section-footer">
+            <a href="/cars.html" class="btn btn-outline">View All Cars</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Benefits Section -->
+      <section class="benefits">
+        <div class="container">
+          <div class="section-header">
+            <h2 >Why Choose Car<span class="ac">Sprint</span> </h2>
+            <p>Experience premium car rental service across India</p>
+          </div>
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-car"></i>
+              </div>
+              <h3>Wide Selection</h3>
+              <p>Choose from over 45+ cars from economy to luxury</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-rupee-sign"></i>
+              </div>
+              <h3>Best Prices</h3>
+              <p>Competitive rates with no hidden charges</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <h3>Multiple Locations</h3>
+              <p>Convenient pickup and drop-off across major cities</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <h3>24/7 Support</h3>
+              <p>Customer service available round the clock</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section class="how-it-works">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="a">How It Works</h2>
+            <p>Rent a car in 4 simple steps</p>
+          </div>
+          <div class="steps-container">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3>Choose Your Car</h3>
+                <p>Browse our wide selection of vehicles and choose the perfect car for your needs</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3>Select Dates</h3>
+                <p>Pick your preferred pickup and return dates</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3>Book Online</h3>
+                <p>Complete your booking with our secure payment system</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h3>Enjoy Your Ride</h3>
+                <p>Pick up your car and enjoy your journey</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Locations Section -->
+      <section class="locations">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="a">Our Locations</h2>
+            <p>Find us in major cities across India</p>
+          </div>
+          <div class="locations-grid">
+            <div class="location-card">
+              <img src="https://images.pexels.com/photos/789750/pexels-photo-789750.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Delhi">
+              <h3>Delhi</h3>
+            </div>
+            <div class="location-card">
+              <img src="https://images.pexels.com/photos/32261174/pexels-photo-32261174/free-photo-of-flora-fountain-in-mumbai-s-historic-district.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Mumbai">
+              <h3>Mumbai</h3>
+            </div>
+            <div class="location-card">
+              <img src="https://images.pexels.com/photos/14845309/pexels-photo-14845309.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Bangalore">
+              <h3>Bangalore</h3>
+            </div>
+            <div class="location-card">
+              <img src="https://images.pexels.com/photos/29152603/pexels-photo-29152603/free-photo-of-majestic-architecture-with-flying-birds-in-hyderabad.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Hyderabad">
+              <h3>Hyderabad</h3>
+            </div>
+            <div class="location-card">
+              <img src="https://images.unsplash.com/photo-1713260443292-ec016608ca42?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWhtZWRhYmFkJTIwY2l0eXxlbnwwfHwwfHx8MA%3D%3D" alt="Ahemdabad">
+              <h3>Ahemdabad</h3>
+            </div>
+                 <div class="location-card">
+              <img src="https://images.unsplash.com/photo-1637080618498-b4a1cad84ae0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Chennai">
+              <h3>Chennai</h3>
+            </div>
+                 <div class="location-card">
+              <img src="https://plus.unsplash.com/premium_photo-1697730497487-7bda47e4baff?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kolkata">
+              <h3>Kolkata</h3>
+            </div>
+                 <div class="location-card">
+              <img src="https://images.unsplash.com/photo-1713761525604-45384322feae?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8UHVuZSUyMGNpdHl8ZW58MHx8MHx8fDA%3D" alt="Pune">
+              <h3>Pune</h3>
+            </div>
+            <div class="location-card">
+              <img src="https://plus.unsplash.com/premium_photo-1697729597066-7b3d09b6dab7?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8S29jaGl8ZW58MHx8MHx8fDA%3D" alt="Kochi">
+              <h3>Kochi</h3>
+            </div>
+            <div class="location-card">
+              <img src="https://images.unsplash.com/photo-1601752874509-0e350467dc7b?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8THVja25vd3xlbnwwfHwwfHx8MA%3D%3D" alt="Lucknow">
+              <h3>Lucknow</h3>
+            </div>
+          </div>
+          <div class="section-footer">
+            <a href="./location.html" class="btn btn-outline">View All Locations</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="testimonials">
+        <div class="container">
+          <div class="section-header">
+            <h2>What Our Customers Say</h2>
+            <p>Trusted by thousands of satisfied customers</p>
+          </div>
+          <div class="testimonials-slider" id="testimonials-slider">
+            <!-- Testimonials will be loaded here via JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter Section -->
+      <!-- <section class="newsletter">
+        <div class="container">
+          <div class="newsletter-content">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get the latest updates and special offers</p>
+            <form id="newsletter-form" class="newsletter-form">
+              <input type="email" placeholder="Your Email Address" required>
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </section> -->
+      
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-col">
+              
+        <div class="logo">
+              <a href="/">
+                <span class="logo-text">Car<span class="highlight">Sprint</span></span>
+              </a>
+            </div>
+              <p>Your trusted car rental service in India</p>
+            </div>
+            <div class="footer-col">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cars.html">Cars</a></li>
+                <li><a href="/locations.html">Locations</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h3>Car Categories</h3>
+              <ul>
+                <li><a href="/cars.html?category=economy">Economy</a></li>
+                <li><a href="/cars.html?category=sedan">Sedan</a></li>
+                <li><a href="/cars.html?category=suv">SUV</a></li>
+                <li><a href="/cars.html?category=luxury">Luxury</a></li>
+                <li><a href="/cars.html?category=electric">Electric</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h3>Contact Info</h3>
+              <ul class="contact-info">
+                <li><i class="fas fa-map-marker-alt"></i> 123 Junagadh</li>
+                <li><i class="fas fa-phone"></i> +91 72028 40833</li>
+                <li><i class="fas fa-envelope"></i> info@CarSprint.in</li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h3>Follow Us</h3>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2025 CarSprint India. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Login Modal -->
+      <div id="login-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Login to Your Account</h2>
+          <form id="login-form">
+            <div class="form-group">
+              <label for="login-email">Email</label>
+              <input type="email" id="login-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="login-password">Password</label>
+              <input type="password" id="login-password" name="password" required>
+            </div>
+            <div class="form-group form-action">
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+            <p class="form-link">Don't have an account? <a href="#" id="switch-to-signup">Sign Up</a></p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Signup Modal -->
+      <div id="signup-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Create an Account</h2>
+          <form id="signup-form">
+            <div class="form-group">
+              <label for="signup-name">Full Name</label>
+              <input type="text" id="signup-name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-email">Email</label>
+              <input type="email" id="signup-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-phone">Phone Number</label>
+              <input type="tel" id="signup-phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit number" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-password">Password</label>
+              <input type="password" id="signup-password" name="password" minlength="8" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-confirm-password">Confirm Password</label>
+              <input type="password" id="signup-confirm-password" name="confirm-password" minlength="8" required>
+            </div>
+            <div class="form-group form-action">
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            </div>
+            <p class="form-link">Already have an account? <a href="#" id="switch-to-login">Login</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
